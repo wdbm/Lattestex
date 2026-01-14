@@ -1,0 +1,934 @@
+{
+\setbeamercolor{normal text}{fg=white255255255}
+\setbeamercolor{background canvas}{bg=blueBunreachtNahEireann000002073}
+\begin{frame}[plain]
+\usebeamercolor[fg]{normal text}
+% Main content area: left 2/3 text, right 1/3 big logo
+\begin{columns}[T,totalwidth=\textwidth]
+    % Left 2/3: title, authors, institute, date
+    \begin{column}{0.66\textwidth}
+        \vspace{2.5cm}
+        {\usebeamerfont{title}\titlePageTitleSpecification\par}
+        \vspace{0.6cm}
+        {\usebeamerfont{author}\authorsTitlePageSpecification\par}
+        \vspace{0.6cm}
+        {\usebeamerfont{institute}\instituteSpecification\par}
+        \vspace{0.1cm}
+        {\usebeamerfont{date}\dateSpecification\par}
+    \end{column}
+    % Right 1/3: single top logo only
+    \begin{column}{0.34\textwidth}
+        \centering
+        \vspace{0.8cm}
+        \includegraphics[width=\titlePageLogoWidth]{\titleLogoAFilename}
+    \end{column}
+\end{columns}
+%\vspace*{\fill}
+\vspace*{0.8cm}
+%\noindent\makebox[\linewidth]{\rule{\paperwidth}{.4pt}}
+\color{blueArasAnUachtarain014095165}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{.4pt}}}
+% Bottom strip: logos spaced across full width
+\vspace*{-0.3cm}
+\begin{columns}[c,totalwidth=\textwidth]
+    \begin{column}{0.25\textwidth}
+        \centering
+        \raisebox{-0.25\height}{%
+            \includegraphics[width=0.5\linewidth]{\titleLogoBFilename}%
+        }
+    \end{column}
+    \begin{column}{0.25\textwidth}
+        \centering
+        \raisebox{-0.25\height}{%
+            \includegraphics[width=0.5\linewidth]{\titleLogoCFilename}%
+        }
+    \end{column}
+    \begin{column}{0.25\textwidth}
+        \centering
+        \raisebox{-0.25\height}{%
+            \includegraphics[width=0.5\linewidth]{\titleLogoDFilename}%
+        }
+    \end{column}
+    \begin{column}{0.25\textwidth}
+        \centering
+        \raisebox{-0.25\height}{%
+            \includegraphics[width=0.5\linewidth]{\titleLogoEFilename}%
+        }
+    \end{column}
+\end{columns}
+\end{frame}
+}
+
+\begin{frame}
+\frametitle{A single, large image}
+\vspace{-0.24 cm}
+\begin{center}
+\includegraphics[width=\lencbedabbd]{media/2015-02-09T161202.jpg}\\
+\end{center}
+\end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{media/2015-02-09T161202.jpg}}
+\begin{frame}[plain]
+\end{frame}
+}
+
+\begin{frame}
+\frametitle{Centred text}
+\begin{center}
+Some centred text\\\mbox{}\\Some more centred text\\\mbox{}\\
+\end{center}
+\end{frame}
+
+\begin{frame}[c]
+\frametitle{Centred text (horizontal and vertical)}
+\begin{center}
+Some centred text
+\end{center}
+\end{frame}
+
+\begin{frame}[c]
+\frametitle{Timestamps}
+\timestampYyyyDashMmDashDd\\
+\timestampDdMonthnameYyyy\\
+\timestampMonthnameYyyy\\
+\end{frame}
+
+\begin{frame}
+\frametitle{Itemised list}
+\begin{itemize}
+\item Item
+\item Item
+    \begin{itemize}
+    \item Subitem
+    \item Subitem
+        \begin{itemize}
+        \item Subitem
+        \end{itemize}
+    \end{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Itemised list with overlay}
+\begin{itemize}
+\item Item\pause
+\item Item\pause
+    \begin{itemize}
+    \item Subitem\pause
+    \item Subitem\pause
+        \begin{itemize}
+        \item Subitem\pause
+        \end{itemize}
+    \end{itemize}
+\item Item\pause
+\item Item
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Enumerate list}
+\begin{enumerate}
+\item Item
+\item Item
+    \begin{enumerate}
+    \item Subitem
+    \item Subitem
+        \begin{enumerate}
+        \item Subitem
+        \end{enumerate}
+    \end{enumerate}
+\item Item
+\item Item
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Description list}
+\begin{description}
+\item[A] Item
+\item[B] Item
+    \begin{description}
+    \item[A] Subitem
+    \item[B] Subitem
+        \begin{description}
+        \item[A] Subitem
+        \end{description}
+    \end{description}
+\item[C] Item
+\item[D] Item
+\end{description}
+\end{frame}
+
+% \checkmark (amsmath)
+% \Checkmark
+% \CheckmarkBold
+% \XSolidBrush
+
+\begin{frame}
+\frametitle{Description list with checkmarks}
+\begin{description}
+\item[\Checkmark] Item
+\item[\Checkmark] Item
+    \begin{description}
+    \item[\Checkmark] Subitem
+    \item[\textbullet] Subitem
+        \begin{description}
+        \item[\textbullet] Subitem
+        \end{description}
+    \end{description}
+\item[\Checkmark] Item
+\item[\XSolidBrush] Item
+\end{description}
+\end{frame}
+
+\begin{frame}
+\frametitle{Attached data}
+\begin{center}
+An attached ROOT data file:\\
+\mbox{}\\
+\textattachfile[color=1 1 1]{media/data.root}{
+    \mbox{\highlightA{\LARGE ${\downarrow}$\Large~data.root}}
+}\\
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Links}
+\begin{itemize}
+\item URL: \url{http://info.cern.ch/hypertext/WWW/TheProject.html}
+\item Hyperlink: \href{https://info.cern.ch/hypertext/WWW/TheProject.html}{TheProject}
+\item Hyperlink: \href{https://cds.cern.ch/record/1969527}{ATL-COM-PHYS-2014-1471}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematics}
+\begin{itemize}
+\item ${H^{+}\to tb}$
+\item Lepton ${p_{T}}$ and ${\eta}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematics}
+Jet pull is a variable that can be constructed from particles within a jet cone. The procedure is as follows:
+\begin{itemize}
+\item Select a pair of jets in an event.
+\item Build a vector sum of calorimeter cells within each jet.
+\end{itemize}
+\begin{equation*}
+\vec{p}=\sum_{i}\frac{E_{T}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
+\end{equation*}
+\begin{itemize}
+\item ${\vec{r_{i}}}$: position of jet cell ${i}$ relative to jet centre
+\item ${E_{T}^{i}}$: transverse energy of cell ${i}$
+\item ${E_{T}^{\textnormal{jet}}}$: transverse energy of jet
+\end{itemize}
+Each cell is assigned to the closer jet in ${\left(\eta, \phi\right)}$ space.
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematics with overlay}
+%\setbeamercovered{transparent}
+Jet pull is a variable that can be constructed from particles within a jet cone. The procedure is as follows:
+\begin{itemize}[<+->]
+\item Select a pair of jets in an event.
+\item Build a vector sum of calorimeter cells within each jet.
+\end{itemize}
+\uncover<3->{%
+\begin{equation*}
+\vec{p}=\sum_{i}\frac{E_{T}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
+\end{equation*}
+}
+\begin{itemize}[<+->]
+\item $\vec{r}_{i}$: position of jet cell $i$ relative to the jet centre
+\item $E_{T}^{i}$: transverse energy of cell $i$
+\item $E_{T}^{\textnormal{jet}}$: transverse energy of the jet
+\end{itemize}
+\uncover<7->{%
+Each cell is assigned to the closer jet in $\left(\eta, \phi\right)$ space.
+}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: Python (syntax highlighting by listings)}
+Python code inline is like this:~\lstinline[style=pythonstyle]!print("hello")!\\\\
+Python as a code block is like this:\\
+\begin{python}
+import multiprocessing
+
+def function(x):
+    return x * x
+
+if __name__ == '__main__':
+    pool = multiprocessing.Pool(processes=4)
+    result = pool.apply_async(function, [10])
+    print(result.get(timeout=1))
+    print(pool.map(function, range(10)))
+\end{python}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: Python (syntax highlighting by minted)}
+Python code inline is like this:~\mintinline{python}{print("hello")}\\\\
+Python as a code block is like this:\\
+\begin{minted}{python}
+import multiprocessing
+
+def function(x):
+    return x * x
+
+if __name__ == '__main__':
+    pool = multiprocessing.Pool(processes=4)
+    result = pool.apply_async(function, [10])
+    print(result.get(timeout=1))
+    print(pool.map(function, range(10)))
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: Python with smaller font (syntax highlighting by minted)}
+\begin{minted}[fontsize=\tiny]{python}
+import sys
+import time
+ 
+def is_prime(n):
+    return zip((True, False), decompose(n))[-1][0]
+ 
+class IsPrimeCached(dict):
+    def __missing__(self, n):
+        r = is_prime(n)
+        self[n] = r
+        return r
+ 
+is_prime_cached = IsPrimeCached()
+ 
+def primes():
+    yield 2
+    n = 3
+    while n < sys.maxint - 2:
+        yield n
+        n += 2
+        while n < sys.maxint - 2 and not is_prime_cached[n]:
+            n += 2
+ 
+def decompose(n):
+    for p in primes():
+        if p*p > n: break
+        while n % p == 0:
+            yield p
+            n /=p
+    if n > 1:
+        yield n
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: C++ (syntax highlighting by listings)}
+\begin{cpp}
+#include <iostream>
+#include <thread>
+
+void say_hello();
+
+int main(int argc, char** argv){
+
+    std::thread my_first_thread(say_hello);
+    my_first_thread.join();
+
+    return 0;
+}
+
+void say_hello(){
+    std::cout << "hello from a thread" << std::endl;
+}
+\end{cpp}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: C++ (syntax highlighting by minted)}
+\begin{minted}{cpp}
+#include <iostream>
+#include <thread>
+
+void say_hello();
+
+int main(int argc, char** argv){
+
+    std::thread my_first_thread(say_hello);
+    my_first_thread.join();
+
+    return 0;
+}
+
+void say_hello(){
+    std::cout << "hello from a thread" << std::endl;
+}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: \LaTeX~(syntax highlighting by listings)}
+\begin{latex}
+\documentclass{article}
+\title{Processes involving charged mesons}
+\author{C.~M.~G.~Lattes, H.~Muirhead, G.~P.~S.~Occhialini, C.~F.~Powell}
+\begin{document}
+\maketitle
+In recent investigations with the photographic method, it has been shown that slow charged particles of small mass, present as a component of the cosmic radiation at high altitudes, can enter nuclei and produce disintegrations with the emission of heavy particles. It is convenient to apply the term `meson` to any particle with a mass intermediate between that of a proton and an electron.
+\end{document}
+\end{latex}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: \LaTeX~(syntax highlighting by minted)}
+\begin{minted}[breaklines]{latex}
+\documentclass{article}
+\title{Processes involving charged mesons}
+\author{C.~M.~G.~Lattes, H.~Muirhead, G.~P.~S.~Occhialini, C.~F.~Powell}
+\begin{document}
+\maketitle
+In recent investigations with the photographic method, it has been shown that slow charged particles of small mass, present as a component of the cosmic radiation at high altitudes, can enter nuclei and produce disintegrations with the emission of heavy particles. It is convenient to apply the term `meson` to any particle with a mass intermediate between that of a proton and an electron.
+\end{document}
+\end{minted}
+\end{frame}
+
+\begin{frame}
+\frametitle{Blocks}
+\begin{block}{Block 1}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\begin{block}{Block 2}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Columns (2)}
+\begin{columns}
+\begin{column}[t]{.5\textwidth}
+\justifying
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+\end{column}
+\begin{column}[t]{.5\textwidth}
+\justifying
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+\end{column}%
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multiple columns (2)}
+\setlength\columnsep{30pt}
+\begin{multicols}{2}
+\justifying
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multiple columns (4)}
+\setlength\columnsep{30pt}
+\begin{multicols}{4}
+\justifying
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\frametitle{Positioning by textblock}
+\vspace{-7 cm}
+\begin{textblock}{8}(0.25, 2.15) % upper left
+\begin{itemize}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{itemize}
+\end{textblock}
+\begin{textblock}{8}(8.75, 2.15) % upper right
+\begin{itemize}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{itemize}
+\end{textblock}
+\begin{textblock}{8}(0.25, 8.75) % lower left
+\begin{itemize}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{itemize}
+\end{textblock}
+\begin{textblock}{8}(8.75, 8.75) % lower right
+\begin{itemize}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{itemize}
+\end{textblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Positioning by textblock}
+\vspace{-7 cm}
+\small
+\begin{textblock}{8}(0.25, 2.15) % upper left
+\begin{itemize}
+\item Suppressed with respect to other Higgs modes
+\item ${H\to b\bar{b}}$ has the largest branching ratio\\(0.577 for ${m_{H}}$ 125~\GeV)
+\item Irreducible background from ${t\bar{t}b\bar{b}}$
+\item Other backgrounds: ${t\bar{t}}$ production in association with light quarks (${u}$, ${d}$, ${s}$) or gluon jets\\(called ${t\bar{t}}$ + light), and ${t\bar{t}+c\bar{c}}$
+\end{itemize}
+\end{textblock}
+\begin{textblock}{8}(8.75, 2.15) % upper right
+\includegraphics[height=4.5 cm]{media/sumLumiByDayUrgent.eps}
+\end{textblock}
+\begin{textblock}{8}(2.75, 10.5) % lower left
+\begin{centering}
+\begin{tabular}{r|c|c|c|c}
+    ${\sqrt{s}}$ (TeV) & 7 & 8 & 13 & 14 \\
+    \hline
+    ${t\bar{t}H}$ (${m_{H}=125\textrm{ GeV}}$) (pb) & 0.086 & 0.130 & 0.5085 & 0.611 \\
+    ${t\bar{t}}$ (pb) & 177 & 253 & 832 & 950 \\
+    \hline
+    S/${\sqrt{\textrm{B}}}$ & 0.00646 & 0.0082 & 0.0176 & 0.0198 \\
+\end{tabular}
+\end{centering}
+\mbox{}\\
+\mbox{}\\
+\tiny
+7~\TeV ${\to}$ 13/14~\TeV: ${S/\sqrt{B}}$ changes by factor of ${\simeq}$3
+\end{textblock}
+%\begin{textblock}{8}(8.25, 8.75) % lower right
+%\end{textblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Images (2)}
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=\lendcabafef]{media/2015-04-21T0410Z_cutflow_e_jets.png}&\includegraphics[width=\lendcabafef]{media/2015-04-21T0410Z_cutflow_mu_jets.png}\\
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Images (3)}
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=\lenadebcdfb]{media/2015-04-21T0410Z_cutflow_ee.png}&\includegraphics[width=\lenadebcdfb]{media/2015-04-21T0410Z_cutflow_emu.png}&
+\includegraphics[width=\lenadebcdfb]{media/2015-04-21T0410Z_cutflow_mumu.png}\\
+\end{tabular}
+\vspace{0.5 cm}\\I3PD+SV1: \url{https://indico.cern.ch/event/387410/contribution/9/material/slides/0.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Images (6)}
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=\lenbbcaddea]{media/2015-04-21T0410Z_comparison_of_jet_pt[0]_of_selection_e_jets.png}&\includegraphics[width=\lenbbcaddea]{media/2015-04-21T0410Z_comparison_of_jet_pt[1]_of_selection_e_jets.png}&\includegraphics[width=\lenbbcaddea]{media/2015-04-21T0410Z_comparison_of_jet_pt[2]_of_selection_e_jets.png}\\
+\includegraphics[width=\lenbbcaddea]{media/2015-04-21T0410Z_comparison_of_jet_pt[3]_of_selection_e_jets.png}&\includegraphics[width=\lenbbcaddea]{media/2015-04-21T0410Z_comparison_of_jet_pt[4]_of_selection_e_jets.png}&\includegraphics[width=\lenbbcaddea]{media/2015-04-21T0410Z_comparison_of_jet_pt[5]_of_selection_e_jets.png}\\
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Images (4) with titles}
+\begin{table}[h]
+\begin{tabular}{cc}
+40 epochs:&100 epochs:
+\\
+\includegraphics[width=\lenadebcdfb]{media/wMwN_atlas_125_all_NN_rEt_rSumPtTrk_rWidth5trPt_40_plots_corrected_Pt_train_ratio.pdf}
+&
+\includegraphics[width=\lenadebcdfb]{media/wMwN_atlas_125_all_NN_rEt_rSumPtTrk_rWidth5trPt_100_plots_corrected_Pt_train_ratio.pdf}
+\\
+145 epochs:&300 epochs:
+\\
+\includegraphics[width=\lenadebcdfb]{media/wMwN_atlas_125_all_NN_rEt_rSumPtTrk_rWidth5trPt_145_plots_corrected_Pt_train_ratio.pdf}
+&
+\includegraphics[width=\lenadebcdfb]{media/wMwN_atlas_125_all_NN_rEt_rSumPtTrk_rWidth5trPt_300_plots_corrected_Pt_train_ratio.pdf}
+\\
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Table}
+${M_{b\bar{b}}}$ resolutions for ${VH_{b\bar{b}}}$ for progressively decreasing MET energy cut requirements for various neural networks, shown to 3 significant figures:
+\begin{center}
+\resizebox{11.5 cm}{!}{
+\begin{tabular}{llllll}
+\hline\hline
+Selection                               & Events & NN0   & NN1   & NN2   & NN3   \\
+\hline
+${VH_{b\bar{b}}}$                       & 23686  & 0.133 & 0.129 & 0.131 & 0.131 \\
+${VH_{b\bar{b}}+\textrm{MET}<100~\GeV}$ & 22654  & 0.132 & 0.130 & 0.129 & 0.131 \\
+${VH_{b\bar{b}}+\textrm{MET}<70~\GeV}$  & 21094  & 0.131 & 0.128 & 0.129 & 0.129 \\
+${VH_{b\bar{b}}+\textrm{MET}<40~\GeV}$  & 15050  & 0.128 & 0.126 & 0.126 & 0.126 \\
+${VH_{b\bar{b}}+\textrm{MET}<20~\GeV}$  & 6174   & 0.130 & 0.127 & 0.126 & 0.127 \\
+\hline\hline
+\end{tabular}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Table with colours}
+\small Here, the physical processes are ranked according to the effectiveness of the corresponding behaviour they induce in NN3, where a greater effectiveness is taken to mean a smaller resolution value. \emph{Caveat:} Systematic uncertainties are not given their due consideration.
+\begin{center}
+\resizebox{11.5 cm}{!}{
+\begin{tabular}{llllll}
+\hline\hline
+Selection                                                & Events & NN0      & NN1      & NN2      & NN3                     \\
+\hline
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>100~\GeV}$} & 1032   & 0.121542 & 0.129038 & 0.13072  & \textcolor{red}{0.116975}\\
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}<40~\GeV}$}  & 15050  & 0.128387 & 0.125939 & 0.125637 & \textcolor{red}{0.125963}\\
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}<20~\GeV}$}  & 6174   & 0.129539 & 0.127454 & 0.126029 & \textcolor{red}{0.127043}\\
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}<70~\GeV}$}  & 21094  & 0.131248 & 0.128119 & 0.128908 & \textcolor{red}{0.128825}\\
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}<100~\GeV}$} & 22654  & 0.132004 & 0.129924 & 0.129095 & \textcolor{red}{0.130467}\\
+\textcolor{red}{${VH_{b\bar{b}}}$}                       & 23686  & 0.132823 & 0.129032 & 0.131202 & \textcolor{red}{0.131303}\\
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>20~\GeV}$}  & 17512  & 0.135974 & 0.13137  & 0.13366  & \textcolor{red}{0.132341}\\
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>40~\GeV}$}  & 8636   & 0.140116 & 0.135415 & 0.140013 & \textcolor{red}{0.140551}\\
+\textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>70~\GeV}$}  & 2592   & 0.143505 & 0.15228  & 0.151469 & \textcolor{red}{0.155914}\\
+\hline\hline
+\end{tabular}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}{Table}
+${m_{b\bar{b}}}$ resolution results (Gaussian fit) for training with epochs of interest:
+\begin{table}[h]
+\begin{tabular}{ll|llll|}
+\cline{3-6}
+&&\multicolumn{4}{c|}{Epochs}\\
+\cline{3-6}
+&&40&100&145&300\\
+\hline
+\multicolumn{1}{|l|}{\multirow{2}{*}{Subset}} & Training      & 0.137 & 0.138 & 0.138 & 0.138\\
+\multicolumn{1}{|l|}{}                        & Training test & 0.139 & 0.139 & 0.139 & 0.139\\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\frametitle{Table}
+Comparison of ${m_{b\bar{b}}}$ resolutions for various channels both excluding and including the MET variable with various epochs:
+\begin{table}[ht]
+\centering
+\resizebox{9.5 cm}{!}{
+\begin{tabular}{|l|l|llll|}
+\cline{1-1}\cline{3-6}
+Number of epochs                           &             & ${l\nu bb}$ & ${llbb}$ & ${\nu\nu bb}$ & all\\
+\hline
+\multicolumn{1}{|c|}{\multirow{3}{*}{50}}  & Without MET & 0.135159    & 0.138616 & 0.135159      & 0.137488\\
+\multicolumn{1}{|c|}{}                     & With MET    & 0.130047    & 0.137266 & 0.136842      & 0.138516\\
+\cline{2-6}
+\multicolumn{1}{|c|}{}                     & Change      & -3.78\%     & -0.97\%  & +1.24\%       & +0.75\% \\
+\hline
+\multicolumn{1}{|c|}{\multirow{3}{*}{100}} & Without MET & 0.134537    & 0.138781 & 0.13656       & 0.13743 \\
+\multicolumn{1}{|c|}{}                     & With MET    & 0.129719    & 0.137265 & 0.136247      & 0.138948\\
+\cline{2-6}
+\multicolumn{1}{|c|}{}                     & Change      & -3.58\%     & -1.09\%  & -0.22\%       & +1.1\%  \\
+\hline
+\multicolumn{1}{|c|}{\multirow{3}{*}{150}} & Without MET & 0.13676     & 0.138464 & 0.137943      & 0.13747 \\
+\multicolumn{1}{|c|}{}                     & With MET    & 0.138292    & 0.137261 & 0.137344      & 0.138948\\
+\cline{2-6}
+\multicolumn{1}{|c|}{}                     & Change      & +1.12\%     & -0.87\%  & -0.43\%       & +1.07\% \\
+\hline
+\multicolumn{1}{|c|}{\multirow{3}{*}{500}} & Without MET & 0.139041    & 0.139451 & 0.13849       & 0.13827 \\
+\multicolumn{1}{|c|}{}                     & With MET    & 0.139225    & 0.137261 & 0.136398      & 0.138948\\
+\cline{2-6}
+\multicolumn{1}{|c|}{}                     & Change      & +0.13\%     & +1.6\%   & -1.51\%       & -0.48\% \\
+\hline
+\end{tabular}
+}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Feynman diagram}
+
+\begin{figure}
+\unitlength=1.00 mm
+\begin{fmffile}{Feynman_diagram_1}
+\begin{fmfchar*}(70,53)
+
+\fmfleftn{i}{2}
+\fmfrightn{o}{4}
+
+\fmf{curly}{i1,v1}
+\fmf{curly}{i2,v2}
+\fmf{fermion}{o1,v1}
+\fmf{fermion, label=\(t\), label.side=left}{v1,v3}
+\fmf{fermion, label=\(\bar{t}\)}{v3,v2}
+\fmf{fermion}{v2,o4}
+\fmf{dashes, label=\(H^{0}\)}{v3,v4}
+\fmf{fermion}{o2,v4}
+\fmf{fermion}{v4,o3}
+
+\fmflabel{\(g\)}{i1}
+\fmflabel{\(g\)}{i2}
+\fmflabel{\(\bar{t}\)}{o1}
+\fmflabel{\(\bar{b}\)}{o2}
+\fmflabel{\(b\)}{o3}
+\fmflabel{\(t\)}{o4}
+
+\end{fmfchar*}
+\end{fmffile}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Feynman diagram with text}
+\begin{columns}
+\begin{column}[t]{.5\textwidth}
+\justifying
+\vspace{-0.5 cm}
+\begin{figure}
+\unitlength=1.00 mm
+\begin{fmffile}{Feynman_diagram_2}
+\begin{fmfchar*}(70,53)
+
+\fmfleftn{i}{2}
+\fmfrightn{o}{4}
+
+\fmf{curly}{i1,v1}
+\fmf{curly}{i2,v2}
+\fmf{fermion}{o1,v1}
+\fmf{fermion, label=\(t\), label.side=left}{v1,v3}
+\fmf{fermion, label=\(\bar{t}\)}{v3,v2}
+\fmf{fermion}{v2,o4}
+\fmf{dashes, label=\(H^{0}\)}{v3,v4}
+\fmf{fermion}{o2,v4}
+\fmf{fermion}{v4,o3}
+
+\fmflabel{\(g\)}{i1}
+\fmflabel{\(g\)}{i2}
+\fmflabel{\(\bar{t}\)}{o1}
+\fmflabel{\(\bar{b}\)}{o2}
+\fmflabel{\(b\)}{o3}
+\fmflabel{\(t\)}{o4}
+
+\end{fmfchar*}
+\end{fmffile}
+\end{figure}
+\end{column}
+\begin{column}[t]{.5\textwidth}
+\justifying
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+\end{column}%
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Feynman diagrams}
+\begin{columns}
+\begin{column}[t]{.5\textwidth}
+\justifying
+\vspace{-0.5 cm}
+\begin{figure}
+\unitlength=1.00 mm
+\begin{fmffile}{Feynman_diagram_3}
+\begin{fmfchar*}(53,39)
+
+\fmfleftn{i}{2}
+\fmfrightn{o}{4}
+
+\fmf{curly}{i1,v1}
+\fmf{curly}{i2,v2}
+\fmf{fermion}{o1,v1}
+\fmf{fermion, label=\(t\), label.side=left}{v1,v3}
+\fmf{fermion, label=\(\bar{t}\)}{v3,v2}
+\fmf{fermion}{v2,o4}
+\fmf{dashes, label=\(H^{0}\)}{v3,v4}
+\fmf{fermion}{o2,v4}
+\fmf{fermion}{v4,o3}
+
+\fmflabel{\(g\)}{i1}
+\fmflabel{\(g\)}{i2}
+\fmflabel{\(\bar{t}\)}{o1}
+\fmflabel{\(\bar{b}\)}{o2}
+\fmflabel{\(b\)}{o3}
+\fmflabel{\(t\)}{o4}
+
+\end{fmfchar*}
+\end{fmffile}
+\end{figure}
+\end{column}
+\begin{column}[t]{.5\textwidth}
+\justifying
+\vspace{-0.5 cm}
+\begin{figure}
+\unitlength=1.00 mm
+\begin{fmffile}{Feynman_diagram_4}
+\begin{fmfchar*}(53,39)
+
+\fmfleftn{i}{2}
+\fmfrightn{o}{4}
+
+\fmf{curly}{i1,v1}
+\fmf{curly}{i2,v2}
+\fmf{fermion}{o1,v1}
+\fmf{fermion}{v1,v3}
+\fmf{fermion}{v3,v2}
+\fmf{fermion}{v2,o4}
+
+\fmf{curly, label=\(g\)}{v3,v4}
+\fmf{fermion}{o2,v4}
+\fmf{fermion}{v4,o3}
+
+\fmflabel{\(g\)}{i1}
+\fmflabel{\(g\)}{i2}
+\fmflabel{\(\bar{t}\)}{o1}
+\fmflabel{\(\bar{b}\)}{o2}
+\fmflabel{\(b\)}{o3}
+\fmflabel{\(t\)}{o4}
+
+\end{fmfchar*}
+\end{fmffile}
+\end{figure}
+\end{column}%
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{TikZ picture}
+\vspace{-0.24 cm}
+\begin{center}
+\tikzset{
+    text=black
+}
+\tikzstyle{empty} = [
+]
+\tikzstyle{Rectangle1} = [
+    rectangle,
+    draw,
+    fill=#1!20, % e.g. red!20
+    node distance=0.65 cm,
+    text width=7 em,
+    text centered,
+    rounded corners,
+    minimum height=4 em,
+    minimum width=3 cm,
+    thick
+]
+\tikzstyle{Rectangle2} = [
+    rectangle,
+    draw,
+    fill=#1!20, % e.g. red!20
+    node distance=1.5 cm,
+    text width=7 em,
+    text centered,
+    rounded corners,
+    minimum height=4 em,
+    minimum width=3 cm,
+    thick
+]
+\tikzstyle{Diamond} = [
+    diamond,
+    draw,
+    fill=#1!20, % e.g. red!20
+    node distance=1.5 cm,
+    text width=7 em,
+    text badly centered,
+    inner sep=0pt,
+    thick
+]
+\tikzstyle{Ellipse} = [
+    ellipse,
+    draw,
+    fill=#1!20, % e.g. red!20
+    node distance=1.5 cm,
+    text width=7 em,
+    thick
+]
+\tikzstyle{container} = [
+    rectangle,
+    draw,
+    inner sep=0.2 cm,
+    dashed
+]
+\tikzstyle{line} = [
+    draw,
+    -{Latex},
+    thick
+]
+\resizebox{6 cm}{!}{%
+\begin{tikzpicture}[auto]
+
+    \node [empty](origin){};
+    \node [Rectangle1=red, right=of origin](primaryxAODData){
+        Primary xAOD data
+    };
+    \node [Rectangle1=red, left=of origin](primaryxAODMC){
+        Primary xAOD MC
+    };
+    \node [Rectangle2=blue, below=of origin](DxAOD0And1Lepton){
+        DxAOD\\0 and 1 lepton
+    };
+    \node [Rectangle2=blue, left=of DxAOD0And1Lepton](DxAODMC){
+        DxAOD\\MC (also called TOPQ1)
+    };
+    \node [Rectangle2=blue, right=of DxAOD0And1Lepton](DxAOD2Leptons){
+        DxAOD\\2 leptons
+    };
+    \node [Rectangle2=yellow, below=of DxAOD0And1Lepton](AnalysisTopPackage){
+        AnalysisTop package\\TTHbbLeptonic
+    };
+    \node [Rectangle2=blue, below=of AnalysisTopPackage](Mini-xAODorflatn-tuple){
+        Mini-xAOD or flat n-tuple
+    };
+    \node [Rectangle2=green, below=of Mini-xAODorflatn-tuple](plots){
+        Plots
+    };
+    \node [container, fit=(primaryxAODData)(origin)(primaryxAODMC)](container1){
+    };
+    \node [container, fit=(AnalysisTopPackage)](container2){
+    };
+    \node [container, fit=(plots)](container3){
+    };
+    
+    \path [line] (primaryxAODMC) -- (DxAODMC) node[pos=0.7, left]{
+        Event slimming~~
+    };
+    \path [line] (primaryxAODData) -- (DxAOD0And1Lepton) node[pos=0.7, left]{
+        TOPQ1~~
+    };
+    \path [line] (primaryxAODData) -- (DxAOD2Leptons) node[pos=0.7, right]{
+        ~~TOPQ2
+    };
+
+    \path [line] (DxAODMC) -- (AnalysisTopPackage);
+    \path [line] (DxAOD0And1Lepton) -- (AnalysisTopPackage);
+    \path [line] (DxAOD2Leptons) -- (AnalysisTopPackage);
+
+    \path [line] (AnalysisTopPackage) -- (Mini-xAODorflatn-tuple);
+    \path [line] (Mini-xAODorflatn-tuple) -- (plots) node[pos=0.5, right]{
+        Scripts
+    };
+
+    \node at (container1.north)[above]{Production system};
+    \node at (container2.south east)[right]{User grid or local};
+    \node at (container3.south east)[right]{User grid or local};
+
+\end{tikzpicture}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}[c]
+\begin{center}
+\mbox{}\\
+\Large Fim
+\end{center}
+\end{frame}

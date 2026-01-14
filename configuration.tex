@@ -1,0 +1,39 @@
+% title for footer
+\newcommand{\titleSpecification}{Demonstration of Lattestex slides}
+% title for title page first slide
+\newcommand{\titlePageTitleSpecification}{
+    \LARGE Demonstration of Lattestex\\
+    \large In the~13~\TeV~era
+}
+% authors for title page first slide
+\newcommand{\authorsTitlePageSpecification}{\underline{Number~6}, Number~1}
+% author for footer
+\newcommand{\authorSpecification}{Number~6}
+% institute for title page first slide and for footer
+\newcommand{\instituteSpecification}{Universidade de São Paulo}
+% date specification
+\newcommand{\dateSpecification}{\timestampDdMonthnameYyyy}
+%\newcommand{\dateSpecification}{14~January~2026}
+% logos
+\newcommand{\titleLogoAFilename}{media/USP_crest_transparent.png}
+\newcommand{\titleLogoBFilename}{media/ATLAS_logo_white.png}
+\newcommand{\titleLogoCFilename}{media/FAPESP_logo_white.png}
+\newcommand{\titleLogoDFilename}{media/HEPIC_logo_white.png}
+\newcommand{\titleLogoEFilename}{media/IFUSP_logo_white.png}
+\newcommand{\titlePageLogoWidth}{4.2 cm}
+\newcommand{\logoAFile}{media/USP_logo.eps}
+\newcommand{\logoAHeightSpecification}{0.3 cm}
+\newcommand{\logoBHeightSpecification}{6 cm}
+% logo on each slide
+%\logo{\includegraphics[height=\logoAHeightSpecification]{\logoAFile}}
+\addtobeamertemplate{background canvas}{}{%
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[
+            anchor=south east,
+            xshift=-0.6 em,
+            yshift=0.6 em
+        ] at (current page.south east) {%
+            \includegraphics[height=\logoAHeightSpecification]{\logoAFile}%
+        };
+    \end{tikzpicture}%
+}

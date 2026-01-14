@@ -1,0 +1,344 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% Lattestex                                                                    %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% version: 2026-01-14T1701Z                                                    %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% DESCRIPTION                                                                  %
+%                                                                              %
+% This program produces Beamer slides.                                         %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                              %
+% LICENCE INFORMATION                                                          %
+%                                                                              %
+% copyright (C) 2026 William Breaden Madden                                    %
+%                                                                              %
+% This software is released under the terms of the GNU General Public License  %
+% version 3 (GPLv3).                                                           %
+%                                                                              %
+% This program is free software: you can redistribute it and/or modify it      %
+% under the terms of the GNU General Public License as published by the Free   %
+% Software Foundation, either version 3 of the License, or (at your option)    %
+% any later version.                                                           %
+%                                                                              %
+% This program is distributed in the hope that it will be useful, but WITHOUT  %
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or        %
+% FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for     %
+% more details.                                                                %
+%                                                                              %
+% For a copy of the GNU General Public License, see                            %
+% <http://www.gnu.org/licenses>.                                               %
+%                                                                              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[aspectratio=169,xcolor={dvipsnames,table}]{beamer}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=british]{english}
+\IfFontExistsTF{Times New Roman}{
+    \setmainfont{Times New Roman}
+}{
+    \setmainfont{TeX Gyre Termes}
+}
+%\setsansfont{Times New Roman}
+\usefonttheme{serif}
+%\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12} % normal
+%\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % bold
+%\setmonofont{DejaVu Sans Mono}
+%\setmonofont{monofur}
+\setmonofont{B612 Mono}
+\usepackage{attachfile}
+\usepackage{bbding} % checklists
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{multicol}
+\usepackage{multirow} % tables
+\usepackage{ragged2e} % justification
+\usepackage{siunitx}
+\usepackage{textpos} % textblock
+\usepackage[normalem]{ulem} % strikethrough (e.g. \sout{G.~Aad~et.~al.})
+
+% verbatim
+\usepackage{fancyvrb}
+\fvset{fontsize=\footnotesize}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{}
+
+% graphics
+\usepackage{animate}
+\usepackage{adjustbox}
+\usepackage{feynmp}
+\usepackage{feynmp-auto}
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, automata, calc, fit, positioning, shapes}
+
+% timestamps
+\usepackage[useregional]{datetime2}
+\usepackage{datetime2-calc}
+% Example: 2026-01-14
+\newcommand{\timestampYyyyDashMmDashDd}{%
+    \number\year-\DTMtwodigits{\number\month}-\DTMtwodigits{\number\day}%
+}
+% Example: 14 January 2026
+\newcommand{\timestampDdMonthnameYyyy}{%
+    \number\day~\DTMmonthname{\month}~\number\year%
+}
+% Example: January 2026
+\newcommand{\timestampMonthnameYyyy}{%
+    \DTMmonthname{\month}~\number\year%
+}
+
+% mathematics
+\usepackage{amsmath}
+\def\evaluate#1{\the\numexpr#1\relax}
+% floor and ceiling functions
+% examples:
+% - \ceil{x}
+% - \ceil[\big]{x}
+% - \ceil[\Big]{x}
+% - \ceil[\bigg]{x}
+% - \ceil[\Bigg]{x}
+% (and similar for \floor)
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+% eV units kerning
+\usepackage{xspace}
+\newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
+\newcommand{\MeV}{\text{M\eV}\xspace}
+\newcommand{\GeV}{\text{G\eV}\xspace}
+\newcommand{\TeV}{\text{T\kern-0.1ex \eV}\xspace}
+
+% lengths
+\newcommand{\lenbacbdced}{1 cm}
+\newcommand{\lenabfddecb}{1.5 cm}
+\newcommand{\lenfdbdaccb}{2 cm}
+\newcommand{\lenccdeebfa}{2.5 cm}
+\newcommand{\lenbbcaddea}{3 cm}
+\newcommand{\lendbecfdae}{3.5 cm}
+\newcommand{\lenadebcdfb}{4 cm}
+\newcommand{\lenfaabbccd}{4.5 cm}
+\newcommand{\lenedcdbbad}{5 cm}
+\newcommand{\lendcabafef}{5.5 cm}
+\newcommand{\lencbdcedfe}{6 cm}
+\newcommand{\lenbdefabcd}{6.5 cm}
+\newcommand{\lendbadcceb}{7 cm}
+\newcommand{\lenfadbbdce}{7.5 cm}
+\newcommand{\lenaedddfac}{8 cm}
+\newcommand{\lenbccebafa}{8.5 cm}
+\newcommand{\lenddfaabbc}{9 cm}
+\newcommand{\lenebccddfe}{9.5 cm}
+\newcommand{\lenfbadcdea}{10 cm}
+\newcommand{\lenadbbcddf}{10.5 cm}
+\newcommand{\lencbedabbd}{11 cm}
+
+% colours
+\definecolor{black000000000}{RGB}{0, 0, 0}
+\definecolor{white255255255}{RGB}{255, 255, 255}
+\definecolor{grey153153153}{RGB}{153, 153, 153}
+\definecolor{grey064064064}{RGB}{64, 64, 64}
+\definecolor{blue000000255}{RGB}{0, 0, 255}
+\definecolor{blue000000170}{RGB}{0, 0, 170}
+\definecolor{blue085085255}{RGB}{85, 85, 255}
+\definecolor{blue170170255}{RGB}{170, 170, 255}
+\definecolor{blue000103200}{RGB}{0, 103, 200}
+\definecolor{blue000063122}{RGB}{0, 63, 122}
+\definecolor{blueCERN030089174}{RGB}{30,89,174}
+\definecolor{blueBunreachtNahEireann000002073}{RGB}{0, 2, 73}
+\definecolor{blueArasAnUachtarain135195215}{RGB}{135, 195, 215}
+\definecolor{blueArasAnUachtarain000044066}{RGB}{0, 44, 66}
+\definecolor{blueArasAnUachtarain014095165}{RGB}{14, 95, 165}
+\definecolor{turquoise064224208}{RGB}{64, 224, 208}
+\definecolor{green000255000}{RGB}{0, 255, 0}
+\definecolor{green085255085}{RGB}{85, 255, 85}
+\definecolor{green000170000}{RGB}{0, 170, 0}
+\definecolor{green055200055}{RGB}{55, 200, 55}
+\definecolor{green000200000}{RGB}{0, 200, 0}
+\definecolor{greenIarnRodEireann046133057}{RGB}{46, 133, 57}
+\definecolor{greenGovIE000102088}{RGB}{0, 102, 88}
+\definecolor{greenGovIE000077068}{RGB}{0, 77, 68}
+\definecolor{yellow255255010}{RGB}{255, 255, 0}
+\definecolor{yellow254254010}{RGB}{254, 254, 10}
+\definecolor{gold198146020}{RGB}{198, 146, 20}
+\definecolor{goldArasAnUachtarain193162103}{RGB}{193, 162, 103}
+\definecolor{red255000000}{RGB}{255, 0, 0}
+\definecolor{red255085085}{RGB}{255, 85, 85}
+\definecolor{red170000000}{RGB}{170, 0, 0}
+
+% theme
+\usetheme{Warsaw}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+%\setbeamertemplate{footline}{%
+%    \leavevmode%
+%    \hbox{%
+%        \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.0ex]{footline}%
+%            \hfill%
+%            \usebeamerfont{footline}%
+%            \insertframenumber/\inserttotalframenumber%
+%            \hspace*{0.6em}%
+%        \end{beamercolorbox}%
+%    }%
+%}
+\setbeamertemplate{navigation symbols}{} % navigation icons off
+\setbeamertemplate{frametitle}[default][rounded=false, shadow=false] % shadows on header off
+% page numbers
+\makeatletter
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.6ex,dp=1.1ex,leftskip=0.8em,rightskip=0.8em]{frametitle}%
+        \usebeamerfont{frametitle}%
+        \insertframetitle%
+        \hfill%
+        {\usebeamerfont{framesubtitle}\insertframenumber/\inserttotalframenumber}%
+    \end{beamercolorbox}%
+}
+\makeatother
+\setbeamertemplate{blocks}[default]
+
+% list markers (types: ball, circle, rectangle, default/triangle)
+% list marker
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[circle]
+% table of contents list marker
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[circle]
+\setbeamertemplate{subsubsection in toc}[circle]
+% description list marker size
+\setbeamersize{description width=0.57cm}
+
+% theme colours
+\setbeamercolor*{palette primary}{use=structure, fg=white255255255, bg=blueBunreachtNahEireann000002073}
+\setbeamercolor*{palette quaternary}{fg=white255255255, bg=blueBunreachtNahEireann000002073}
+% foreground and background colours
+\setbeamercolor{normal text}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+% table of contents section colours
+\setbeamercolor{section in toc}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+% table of contents list marker colours
+\setbeamercolor{section number projected}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+% description list marker colours
+\setbeamercolor{description item}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+\setbeamercolor{description subitem}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+\setbeamercolor{description subsubitem}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+% itemised list marker colours
+\setbeamercolor{itemize item}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+\setbeamercolor{itemize subitem}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+\setbeamercolor{itemize subsubitem}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+% enumerated list marker colours
+\setbeamercolor{item projected}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+
+% block colours and appearance
+\setbeamercolor{block title}{fg=white255255255, bg=blueArasAnUachtarain014095165}
+\setbeamercolor{block body}{fg=white255255255, bg=blueBunreachtNahEireann000002073}
+% block list marker colours
+\addtobeamertemplate{block begin}{}{
+    \setbeamercolor{enumerate item}{use=block body, fg=block body.fg}
+    \setbeamercolor{enumerate subitem}{use=block body, fg=block body.fg}
+    \setbeamercolor{enumerate subsubitem}{use=block body, fg=block body.fg}
+    \setbeamercolor{description item}{use=block body, fg=block body.fg}
+    \setbeamercolor{description subitem}{use=block body, fg=block body.fg}
+    \setbeamercolor{description subsubitem}{use=block body, fg=block body.fg}
+    \setbeamercolor{itemize item}{use=block body, fg=block body.fg}
+    \setbeamercolor{itemize subitem}{use=block body, fg=block body.fg}
+    \setbeamercolor{itemize subsubitem}{use=block body, fg=block body.fg}
+}
+
+% syntax highlighting
+% base code style with listings
+\lstdefinestyle{codebase}{
+    %backgroundcolor=\color{black},
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue085085255},
+    stringstyle=\color{greenGovIE000077068},
+    commentstyle=\color{yellow}\ttfamily,
+    morecomment=[l][\color{orange}]{\#},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    %numbers=left, % line numbers
+    numberstyle=\footnotesize, % line numbers font size
+    stepnumber=1, % line numbers step between two line numbers
+    numbersep=10pt, % line numbers distance from code
+    escapeinside={\%*}{*)}, % comment within code
+    breaklines=true,
+    breakatwhitespace=false,
+    %frame=single,
+    frame=tb,
+    %caption="Code",
+    captionpos=b,
+}
+% Python listings style
+\lstdefinestyle{pythonstyle}{
+    style=codebase,
+    language=Python,
+    emph={MyClass,__init__},
+    emphstyle=\color{red255085085},
+}
+% LaTeX listings style
+\lstdefinestyle{latexstyle}{
+    style=codebase,
+    language=TeX,
+    emph={},
+    emphstyle=\color{red255085085},
+}
+% C++ listings style
+\lstdefinestyle{cppstyle}{
+    style=codebase,
+    language=C++,
+    emph={int,char,double,float,unsigned},
+    emphstyle=\color{red255085085},
+}
+% Python listings environments
+\lstnewenvironment{python}[1][]{\lstset{style=pythonstyle,#1}}{}
+\newcommand\pythonexternal[1]{%
+    {\lstinputlisting[style=pythonstyle]{#1}}%
+}
+\newcommand\pythoninline[1]{%
+    {\lstinline[style=pythonstyle]!#1!}%
+}
+% LaTeX listings environments
+\lstnewenvironment{latex}[1][]{\lstset{style=latexstyle,#1}}{}
+\newcommand\latexexternal[1]{%
+    {\lstinputlisting[style=latexstyle]{#1}}%
+}
+\newcommand\latexinline[1]{%
+    {\lstinline[style=latexstyle]!#1!}%
+}
+% C++ listings environments
+\lstnewenvironment{cpp}[1][]{\lstset{style=cppstyle,#1}}{}
+\newcommand\cppexternal[1]{%
+    {\lstinputlisting[style=cppstyle]{#1}}%
+}
+\newcommand\cppinline[1]{%
+    {\lstinline[style=cppstyle]!#1!}%
+}
+
+% text highlighting
+\newcommand{\highlightA}[1]{\colorbox{blueBunreachtNahEireann000002073}{#1}}
+
+% hyperlinks colours
+%\PassOptionsToPackage{hidelinks}{hyperref}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blueArasAnUachtarain014095165}
+% link buttons colours
+\setbeamercolor{button}{bg=white255255255, fg=blueBunreachtNahEireann000002073}
+
+\input{configuration}
+
+\begin{document}
+
+\input{slides}
+
+\end{document}
