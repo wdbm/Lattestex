@@ -4,7 +4,7 @@
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
-% version: 2026-01-14T1701Z                                                    %
+% version: 2026-08-07T2136Z                                                    %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
@@ -40,12 +40,22 @@
 
 \usepackage{fontspec}
 \usepackage{polyglossia}
+\usepackage[autostyle]{csquotes}
 \setdefaultlanguage[variant=british]{english}
+\DeclareQuoteStyle{lattestex}
+    {“}
+    {”}
+    {‘}
+    {’}
+\setquotestyle{lattestex}
 \IfFontExistsTF{Times New Roman}{
     \setmainfont{Times New Roman}
 }{
     \setmainfont{TeX Gyre Termes}
 }
+% Allow plain ASCII double quotes in normal text while forcing the desired
+% double-quote style independently of the document language variant.
+\MakeOuterQuote{"}
 %\setsansfont{Times New Roman}
 \usefonttheme{serif}
 %\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12} % normal
@@ -334,6 +344,40 @@
 \hypersetup{colorlinks=true, urlcolor=blueArasAnUachtarain014095165}
 % link buttons colours
 \setbeamercolor{button}{bg=white255255255, fg=blueBunreachtNahEireann000002073}
+
+% Treat a straight apostrophe between letters as an apostrophe and otherwise
+% alternate it as an opening/closing single quotation mark in normal text.
+\ExplSyntaxOn
+\bool_new:N \g_lattestex_single_quote_open_bool
+\cs_new_protected:Npn \lattestex_single_quote:
+{
+    \mode_if_math:TF
+        { \char_generate:nn { `\' } { 12 } }
+        {
+            \int_compare:nNnTF { \lastnodetype } = { 9 }
+                {
+                    \peek_catcode:NTF a
+                        { ’ }
+                        { \lattestex_single_quote_toggle: }
+                }
+                { \lattestex_single_quote_toggle: }
+        }
+}
+\cs_new_protected:Npn \lattestex_single_quote_toggle:
+{
+    \bool_if:NTF \g_lattestex_single_quote_open_bool
+        {
+            ’
+            \bool_gset_false:N \g_lattestex_single_quote_open_bool
+        }
+        {
+            ‘
+            \bool_gset_true:N \g_lattestex_single_quote_open_bool
+        }
+}
+\char_set_catcode_active:N \'
+\cs_set_eq:NN ' \lattestex_single_quote:
+\ExplSyntaxOff
 
 \input{configuration}
 
