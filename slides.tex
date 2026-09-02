@@ -214,7 +214,7 @@ An attached ROOT data file:\\
 \frametitle{Mathematics}
 \begin{itemize}
 \item ${H^{+}\to tb}$
-\item Lepton ${p_{T}}$ and ${\eta}$
+\item Lepton ${p_{\text{T}}}$ and ${\eta}$
 \end{itemize}
 \end{frame}
 
@@ -226,12 +226,12 @@ Jet pull is a variable that can be constructed from particles within a jet cone.
 \item Build a vector sum of calorimeter cells within each jet.
 \end{itemize}
 \begin{equation*}
-\vec{p}=\sum_{i}\frac{E_{T}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
+\vec{p}=\sum_{i}\frac{E_{\text{T}}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
 \end{equation*}
 \begin{itemize}
 \item ${\vec{r_{i}}}$: position of jet cell ${i}$ relative to jet centre
-\item ${E_{T}^{i}}$: transverse energy of cell ${i}$
-\item ${E_{T}^{\textnormal{jet}}}$: transverse energy of jet
+\item ${E_{\text{T}}^{i}}$: transverse energy of cell ${i}$
+\item ${E_{\text{T}}^{\textnormal{jet}}}$: transverse energy of jet
 \end{itemize}
 Each cell is assigned to the closer jet in ${\left(\eta, \phi\right)}$ space.
 \end{frame}
@@ -246,13 +246,13 @@ Jet pull is a variable that can be constructed from particles within a jet cone.
 \end{itemize}
 \uncover<3->{%
 \begin{equation*}
-\vec{p}=\sum_{i}\frac{E_{T}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
+\vec{p}=\sum_{i}\frac{E_{\text{T}}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
 \end{equation*}
 }
 \begin{itemize}[<+->]
 \item $\vec{r}_{i}$: position of jet cell $i$ relative to the jet centre
-\item $E_{T}^{i}$: transverse energy of cell $i$
-\item $E_{T}^{\textnormal{jet}}$: transverse energy of the jet
+\item $E_{\text{T}}^{i}$: transverse energy of cell $i$
+\item $E_{\text{T}}^{\textnormal{jet}}$: transverse energy of the jet
 \end{itemize}
 \uncover<7->{%
 Each cell is assigned to the closer jet in $\left(\eta, \phi\right)$ space.
@@ -500,13 +500,18 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 \end{textblock}
 \begin{textblock}{8}(2.75, 10.5) % lower left
 \begin{centering}
-\begin{tabular}{r|c|c|c|c}
-    ${\sqrt{s}}$ (\TeV) & 7 & 8 & 13 & 14 \\
-    \hline
-    ${t\bar{t}H}$ (${m_{H}=125\textrm{ GeV}}$) (pb) & 0.086 & 0.130 & 0.5085 & 0.611 \\
-    ${t\bar{t}}$ (pb) & 177 & 253 & 832 & 950 \\
-    \hline
-    S/${\sqrt{\textrm{B}}}$ & 0.00646 & 0.0082 & 0.0176 & 0.0198 \\
+\begin{tabular}{lcccc}
+    \toprule
+    ${\sqrt{s}}$ [\TeV] & 7 & 8 & 13 & 14 \\
+    \midrule
+    ${\sigma(t\bar{t}H)}$ [pb], ${m_H = 125~\GeV}$
+        & 0.086 & 0.130 & 0.5085 & 0.611 \\
+    ${\sigma(t\bar{t})}$ [pb]
+        & 177 & 253 & 832 & 950 \\
+    \midrule
+    ${\text{S}/\sqrt{\text{B}}}$
+        & 0.00646 & 0.0082 & 0.0176 & 0.0198 \\
+    \bottomrule
 \end{tabular}
 \end{centering}
 \mbox{}\\
@@ -599,15 +604,15 @@ ${M_{b\bar{b}}}$ resolutions for ${VH_{b\bar{b}}}$ for progressively decreasing 
 \begin{center}
 \resizebox{11.5 cm}{!}{
 \begin{tabular}{llllll}
-\hline\hline
+\toprule
 Selection                               & Events & NN0   & NN1   & NN2   & NN3   \\
-\hline
+\midrule
 ${VH_{b\bar{b}}}$                       & 23686  & 0.133 & 0.129 & 0.131 & 0.131 \\
 ${VH_{b\bar{b}}+\textrm{MET}<100~\GeV}$ & 22654  & 0.132 & 0.130 & 0.129 & 0.131 \\
 ${VH_{b\bar{b}}+\textrm{MET}<70~\GeV}$  & 21094  & 0.131 & 0.128 & 0.129 & 0.129 \\
 ${VH_{b\bar{b}}+\textrm{MET}<40~\GeV}$  & 15050  & 0.128 & 0.126 & 0.126 & 0.126 \\
 ${VH_{b\bar{b}}+\textrm{MET}<20~\GeV}$  & 6174   & 0.130 & 0.127 & 0.126 & 0.127 \\
-\hline\hline
+\bottomrule
 \end{tabular}
 }
 \end{center}
@@ -619,9 +624,9 @@ ${VH_{b\bar{b}}+\textrm{MET}<20~\GeV}$  & 6174   & 0.130 & 0.127 & 0.126 & 0.127
 \begin{center}
 \resizebox{11.5 cm}{!}{
 \begin{tabular}{llllll}
-\hline\hline
+\toprule
 Selection                                                & Events & NN0      & NN1      & NN2      & NN3                     \\
-\hline
+\midrule
 \textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>100~\GeV}$} & 1032   & 0.121542 & 0.129038 & 0.13072  & \textcolor{red}{0.116975}\\
 \textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}<40~\GeV}$}  & 15050  & 0.128387 & 0.125939 & 0.125637 & \textcolor{red}{0.125963}\\
 \textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}<20~\GeV}$}  & 6174   & 0.129539 & 0.127454 & 0.126029 & \textcolor{red}{0.127043}\\
@@ -631,61 +636,62 @@ Selection                                                & Events & NN0      & N
 \textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>20~\GeV}$}  & 17512  & 0.135974 & 0.13137  & 0.13366  & \textcolor{red}{0.132341}\\
 \textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>40~\GeV}$}  & 8636   & 0.140116 & 0.135415 & 0.140013 & \textcolor{red}{0.140551}\\
 \textcolor{red}{${VH_{b\bar{b}}+\textrm{MET}>70~\GeV}$}  & 2592   & 0.143505 & 0.15228  & 0.151469 & \textcolor{red}{0.155914}\\
-\hline\hline
+\bottomrule
 \end{tabular}
 }
 \end{center}
 \end{frame}
 
 \begin{frame}{Table}
-${m_{b\bar{b}}}$ resolution results (Gaussian fit) for training with epochs of interest:
-\begin{table}[h]
-\begin{tabular}{ll|llll|}
-\cline{3-6}
-&&\multicolumn{4}{c|}{Epochs}\\
-\cline{3-6}
-&&40&100&145&300\\
-\hline
-\multicolumn{1}{|l|}{\multirow{2}{*}{Subset}} & Training      & 0.137 & 0.138 & 0.138 & 0.138\\
-\multicolumn{1}{|l|}{}                        & Training test & 0.139 & 0.139 & 0.139 & 0.139\\
-\hline
+Gaussian-fit ${m_{b\bar{b}}}$ resolution for selected training epochs:
+\begin{table}
+\centering
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{4}{c}{Epoch} \\
+\cmidrule(lr){2-5}
+Subset & 40 & 100 & 145 & 300 \\
+\midrule
+Training      & 0.137 & 0.138 & 0.138 & 0.138 \\
+Training test & 0.139 & 0.139 & 0.139 & 0.139 \\
+\bottomrule
 \end{tabular}
 \end{table}
 \end{frame}
 
-\begin{frame}
-\frametitle{Table}
-Comparison of ${m_{b\bar{b}}}$ resolutions for various channels both excluding and including the MET variable with various epochs:
-\begin{table}[ht]
-\centering
-\resizebox{9.5 cm}{!}{
-\begin{tabular}{|l|l|llll|}
-\cline{1-1}\cline{3-6}
-Number of epochs                           &             & ${l\nu bb}$ & ${llbb}$ & ${\nu\nu bb}$ & all\\
-\hline
-\multicolumn{1}{|c|}{\multirow{3}{*}{50}}  & Without MET & 0.135159    & 0.138616 & 0.135159      & 0.137488\\
-\multicolumn{1}{|c|}{}                     & With MET    & 0.130047    & 0.137266 & 0.136842      & 0.138516\\
-\cline{2-6}
-\multicolumn{1}{|c|}{}                     & Change      & -3.78\%     & -0.97\%  & +1.24\%       & +0.75\% \\
-\hline
-\multicolumn{1}{|c|}{\multirow{3}{*}{100}} & Without MET & 0.134537    & 0.138781 & 0.13656       & 0.13743 \\
-\multicolumn{1}{|c|}{}                     & With MET    & 0.129719    & 0.137265 & 0.136247      & 0.138948\\
-\cline{2-6}
-\multicolumn{1}{|c|}{}                     & Change      & -3.58\%     & -1.09\%  & -0.22\%       & +1.1\%  \\
-\hline
-\multicolumn{1}{|c|}{\multirow{3}{*}{150}} & Without MET & 0.13676     & 0.138464 & 0.137943      & 0.13747 \\
-\multicolumn{1}{|c|}{}                     & With MET    & 0.138292    & 0.137261 & 0.137344      & 0.138948\\
-\cline{2-6}
-\multicolumn{1}{|c|}{}                     & Change      & +1.12\%     & -0.87\%  & -0.43\%       & +1.07\% \\
-\hline
-\multicolumn{1}{|c|}{\multirow{3}{*}{500}} & Without MET & 0.139041    & 0.139451 & 0.13849       & 0.13827 \\
-\multicolumn{1}{|c|}{}                     & With MET    & 0.139225    & 0.137261 & 0.136398      & 0.138948\\
-\cline{2-6}
-\multicolumn{1}{|c|}{}                     & Change      & +0.13\%     & +1.6\%   & -1.51\%       & -0.48\% \\
-\hline
-\end{tabular}
-}
+\begin{frame}{Table}
+Comparison of Gaussian-fit ${m_{b\bar{b}}}$ resolutions with and without
+MET as an input variable:
+\begin{table}
+    \centering
+    \small
+    \begin{tabular}{clcccc}
+        \toprule
+        Epoch & Input & ${l\nu bb}$ & ${llbb}$ & ${\nu\nu bb}$ & All \\
+        \midrule
+        50
+            & Without MET & 0.135159 & 0.138616 & 0.135159 & 0.137488 \\
+            & With MET    & 0.130047 & 0.137266 & 0.136842 & 0.138516 \\
+            & Change      & $-3.78~\%$ & $-0.97~\%$ & $+1.24~\%$ & $+0.75~\%$ \\
+        \addlinespace
+        100
+            & Without MET & 0.134537 & 0.138781 & 0.136560 & 0.137430 \\
+            & With MET    & 0.129719 & 0.137265 & 0.136247 & 0.138948 \\
+            & Change      & $-3.58~\%$ & $-1.09~\%$ & $-0.22~\%$ & $+1.10~\%$ \\
+        \addlinespace
+        150
+            & Without MET & 0.136760 & 0.138464 & 0.137943 & 0.137470 \\
+            & With MET    & 0.138292 & 0.137261 & 0.137344 & 0.138948 \\
+            & Change      & $+1.12~\%$ & $-0.87~\%$ & $-0.43~\%$ & $+1.07~\%$ \\
+        \addlinespace
+        500
+            & Without MET & 0.139041 & 0.139451 & 0.138490 & 0.138270 \\
+            & With MET    & 0.139225 & 0.137261 & 0.136398 & 0.138948 \\
+            & Change      & $+0.13~\%$ & $+1.60~\%$ & $-1.51~\%$ & $-0.48~\%$ \\
+        \bottomrule
+    \end{tabular}
 \end{table}
+
 \end{frame}
 
 \begin{frame}[fragile]
