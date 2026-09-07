@@ -74,9 +74,10 @@
 
 \begin{frame}
 \frametitle{Centred text}
-\begin{center}
-Some centred text\\\mbox{}\\Some more centred text\\\mbox{}\\
-\end{center}
+\centering
+Some centred text\par
+\vspace{\baselineskip}
+Some more centred text
 \end{frame}
 
 \begin{frame}[c]
@@ -235,11 +236,9 @@ Jet pull is a variable that can be constructed from particles within a jet cone.
 \begin{itemize}
 \item Select a pair of jets in an event.
 \item Build a vector sum of calorimeter cells within each jet.
-\end{itemize}
 \begin{equation*}
 \vec{p}=\sum_{i}\frac{E_{\text{T}}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
 \end{equation*}
-\begin{itemize}
 \item ${\vec{r_{i}}}$: position of jet cell ${i}$ relative to jet centre
 \item ${E_{\text{T}}^{i}}$: transverse energy of cell ${i}$
 \item ${E_{\text{T}}^{\textnormal{jet}}}$: transverse energy of jet
@@ -249,24 +248,27 @@ Each cell is assigned to the closer jet in ${\left(\eta, \phi\right)}$ space.
 
 \begin{frame}
 \frametitle{Mathematics with overlay}
-%\setbeamercovered{transparent}
+%\setbeamercovered{transparent} % faint appearance of material not yet uncovered
 Jet pull is a variable that can be constructed from particles within a jet cone. The procedure is as follows:
+% Share the + automatic counter throughout this frame.
 \begin{itemize}[<+->]
 \item Select a pair of jets in an event.
 \item Build a vector sum of calorimeter cells within each jet.
 \end{itemize}
-\uncover<3->{%
+% Hide this material on overlays 1-2, then show it from overlay 3 onward, but
+% reserve the space while it is hidden. This is in contrast to `\only`.
+\uncover<+->{%
 \begin{equation*}
 \vec{p}=\sum_{i}\frac{E_{\text{T}}^{i}\left|r_{i}\right|}{E^{\textnormal{jet}}_{T}}\vec{r}_{i}
 \end{equation*}
 }
 \begin{itemize}[<+->]
-\item $\vec{r}_{i}$: position of jet cell $i$ relative to the jet centre
-\item $E_{\text{T}}^{i}$: transverse energy of cell $i$
-\item $E_{\text{T}}^{\textnormal{jet}}$: transverse energy of the jet
+\item ${\vec{r}_{i}}$: position of jet cell ${i}$ relative to the jet centre
+\item ${E_{\text{T}}^{i}}$: transverse energy of cell ${i}$
+\item ${E_{\text{T}}^{\textnormal{jet}}}$: transverse energy of the jet
 \end{itemize}
-\uncover<7->{%
-Each cell is assigned to the closer jet in $\left(\eta, \phi\right)$ space.
+\uncover<+->{%
+Each cell is assigned to the closer jet in ${\left(\eta, \phi\right)}$ space.
 }
 \end{frame}
 
@@ -293,6 +295,25 @@ if __name__ == '__main__':
 Python code inline is like this:~\mintinline{python}{print("hello")}\\\\
 Python as a code block is like this:\\
 \begin{minted}[style=default, breaklines]{python}
+import multiprocessing
+
+def function(x):
+    return x * x
+
+if __name__ == '__main__':
+    pool = multiprocessing.Pool(processes=4)
+    result = pool.apply_async(function, [10])
+    print(result.get(timeout=1))
+    print(pool.map(function, range(10)))
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: Python (dark syntax highlighting by minted)}
+Python code inline is like this:~\mintinline{python}{print("hello")}\\\\
+Python as a code block is like this:\\
+\color{white255255255}
+\begin{minted}[style=github-dark, bgcolor=blueBunreachtNahEireann000002073, breaklines]{python}
 import multiprocessing
 
 def function(x):
@@ -368,6 +389,29 @@ void say_hello(){
 \begin{frame}[fragile]
 \frametitle{Code: C++ (syntax highlighting by minted)}
 \begin{minted}[style=default, breaklines]{cpp}
+#include <iostream>
+#include <thread>
+
+void say_hello();
+
+int main(int argc, char** argv){
+
+    std::thread my_first_thread(say_hello);
+    my_first_thread.join();
+
+    return 0;
+}
+
+void say_hello(){
+    std::cout << "hello from a thread" << std::endl;
+}
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: C++ (syntax highlighting by minted)}
+\color{white255255255}
+\begin{minted}[style=github-dark, bgcolor=blueBunreachtNahEireann000002073, breaklines]{cpp}
 #include <iostream>
 #include <thread>
 
