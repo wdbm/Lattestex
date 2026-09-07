@@ -219,6 +219,17 @@ An attached ROOT data file:\\
 \end{frame}
 
 \begin{frame}
+\frametitle{Electron-volt units and percentages}
+\begin{itemize}
+\item Normal text: The beam energy is 6.5~\TeV per beam.
+\item Mathematics: ${E_{\text{beam}} = 6.5\,\TeV}$.
+\item With \texttt{siunitx}: The beam energy is \qty{6.5}{\TeV} per beam.
+\item Momentum: The PETRA beams at DESY were each \qty{24}{\GeV\per\clight}.
+\item Percentage: The selection efficiency is \qty{95}{\percent}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
 \frametitle{Mathematics}
 Jet pull is a variable that can be constructed from particles within a jet cone. The procedure is as follows:
 \begin{itemize}
@@ -281,7 +292,7 @@ if __name__ == '__main__':
 \frametitle{Code: Python (syntax highlighting by minted)}
 Python code inline is like this:~\mintinline{python}{print("hello")}\\\\
 Python as a code block is like this:\\
-\begin{minted}{python}
+\begin{minted}[style=default, breaklines]{python}
 import multiprocessing
 
 def function(x):
@@ -297,7 +308,7 @@ if __name__ == '__main__':
 
 \begin{frame}[fragile]
 \frametitle{Code: Python with smaller font (syntax highlighting by minted)}
-\begin{minted}[fontsize=\tiny]{python}
+\begin{minted}[style=default, breaklines, fontsize=\tiny]{python}
 import sys
 import time
  
@@ -356,7 +367,7 @@ void say_hello(){
 
 \begin{frame}[fragile]
 \frametitle{Code: C++ (syntax highlighting by minted)}
-\begin{minted}{cpp}
+\begin{minted}[style=default, breaklines]{cpp}
 #include <iostream>
 #include <thread>
 
@@ -391,7 +402,7 @@ In recent investigations with the photographic method, it has been shown that sl
 
 \begin{frame}[fragile]
 \frametitle{Code: \LaTeX~(syntax highlighting by minted)}
-\begin{minted}[breaklines]{latex}
+\begin{minted}[style=default, breaklines]{latex}
 \documentclass{article}
 \title{Processes involving charged mesons}
 \author{C.~M.~G.~Lattes, H.~Muirhead, G.~P.~S.~Occhialini, C.~F.~Powell}
@@ -400,6 +411,22 @@ In recent investigations with the photographic method, it has been shown that sl
 In recent investigations with the photographic method, it has been shown that slow charged particles of small mass, present as a component of the cosmic radiation at high altitudes, can enter nuclei and produce disintegrations with the emission of heavy particles. It is convenient to apply the term `meson` to any particle with a mass intermediate between that of a proton and an electron.
 \end{document}
 \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Code: \LaTeX~(dark syntax highlighting by minted)}
+{
+\color{white255255255}
+\begin{minted}[style=github-dark, bgcolor=blueBunreachtNahEireann000002073, breaklines]{latex}
+\documentclass{article}
+\title{Processes involving charged mesons}
+\author{C.~M.~G.~Lattes, H.~Muirhead, G.~P.~S.~Occhialini, C.~F.~Powell}
+\begin{document}
+\maketitle
+In recent investigations with the photographic method, it has been shown that slow charged particles of small mass, present as a component of the cosmic radiation at high altitudes, can enter nuclei and produce disintegrations with the emission of heavy particles. It is convenient to apply the term `meson` to any particle with a mass intermediate between that of a proton and an electron.
+\end{document}
+\end{minted}
+}
 \end{frame}
 
 \begin{frame}
@@ -416,6 +443,184 @@ In recent investigations with the photographic method, it has been shown that sl
 \item Item
 \end{itemize}
 \end{block}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Blocks in columns}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 1}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 2}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\vspace{0.2cm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 3}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 4}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\vspace{0.2cm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 5}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 6}
+\begin{itemize}
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Blocks in columns}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 1}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 2}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 3}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{Block 4}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Blocks in columns}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.31\textwidth}
+\begin{block}{Block 1}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.31\textwidth}
+\begin{block}{Block 2}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.31\textwidth}
+\begin{block}{Block 3}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\vfill
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.31\textwidth}
+\begin{block}{Block 4}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.31\textwidth}
+\begin{block}{Block 5}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.31\textwidth}
+\begin{block}{Block 6}
+\begin{itemize}
+\item Item
+\item Item
+\item Item
+\item Item
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -498,8 +703,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 \begin{textblock}{8}(8.75, 2.15) % upper right
 \includegraphics[height=4.5 cm]{media/sumLumiByDayUrgent.eps}
 \end{textblock}
-\begin{textblock}{8}(2.75, 10.5) % lower left
-\begin{centering}
+\begin{textblock}{14}(0, 10.5) % lower centre
+\centering
 \begin{tabular}{lcccc}
     \toprule
     ${\sqrt{s}}$ [\TeV] & 7 & 8 & 13 & 14 \\
@@ -513,11 +718,11 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
         & 0.00646 & 0.0082 & 0.0176 & 0.0198 \\
     \bottomrule
 \end{tabular}
-\end{centering}
-\mbox{}\\
-\mbox{}\\
-\tiny
-7~\TeV ${\to}$ 13/14~\TeV: ${S/\sqrt{B}}$ changes by factor of ${\simeq}$3
+\par
+\vspace{0.3 cm}
+{\tiny
+7~\TeV ${\to}$ 13/14~\TeV: ${S/\sqrt{B}}$ changes by factor of ${\simeq}$3\par
+}
 \end{textblock}
 %\begin{textblock}{8}(8.25, 8.75) % lower right
 %\end{textblock}
@@ -670,24 +875,24 @@ MET as an input variable:
         Epoch & Input & ${l\nu bb}$ & ${llbb}$ & ${\nu\nu bb}$ & All \\
         \midrule
         50
-            & Without MET & 0.135159 & 0.138616 & 0.135159 & 0.137488 \\
-            & With MET    & 0.130047 & 0.137266 & 0.136842 & 0.138516 \\
-            & Change      & $-3.78~\%$ & $-0.97~\%$ & $+1.24~\%$ & $+0.75~\%$ \\
+            & Without MET & 0.135159              & 0.138616              & 0.135159              & 0.137488 \\
+            & With MET    & 0.130047              & 0.137266              & 0.136842              & 0.138516 \\
+            & Change      & \qty{-3.78}{\percent} & \qty{-0.97}{\percent} & \qty{+1.24}{\percent} & \qty{+0.75}{\percent} \\
         \addlinespace
         100
-            & Without MET & 0.134537 & 0.138781 & 0.136560 & 0.137430 \\
-            & With MET    & 0.129719 & 0.137265 & 0.136247 & 0.138948 \\
-            & Change      & $-3.58~\%$ & $-1.09~\%$ & $-0.22~\%$ & $+1.10~\%$ \\
+            & Without MET & 0.134537              & 0.138781              & 0.136560              & 0.137430 \\
+            & With MET    & 0.129719              & 0.137265              & 0.136247              & 0.138948 \\
+            & Change      & \qty{-3.58}{\percent} & \qty{-1.09}{\percent} & \qty{-0.22}{\percent} & \qty{+1.10}{\percent} \\
         \addlinespace
         150
-            & Without MET & 0.136760 & 0.138464 & 0.137943 & 0.137470 \\
-            & With MET    & 0.138292 & 0.137261 & 0.137344 & 0.138948 \\
-            & Change      & $+1.12~\%$ & $-0.87~\%$ & $-0.43~\%$ & $+1.07~\%$ \\
+            & Without MET & 0.136760              & 0.138464              & 0.137943              & 0.137470 \\
+            & With MET    & 0.138292              & 0.137261              & 0.137344              & 0.138948 \\
+            & Change      & \qty{+1.12}{\percent} & \qty{-0.87}{\percent} & \qty{-0.43}{\percent} & \qty{+1.07}{\percent} \\
         \addlinespace
         500
-            & Without MET & 0.139041 & 0.139451 & 0.138490 & 0.138270 \\
-            & With MET    & 0.139225 & 0.137261 & 0.136398 & 0.138948 \\
-            & Change      & $+0.13~\%$ & $+1.60~\%$ & $-1.51~\%$ & $-0.48~\%$ \\
+            & Without MET & 0.139041              & 0.139451              & 0.138490              & 0.138270 \\
+            & With MET    & 0.139225              & 0.137261              & 0.136398              & 0.138948 \\
+            & Change      & \qty{+0.13}{\percent} & \qty{+1.60}{\percent} & \qty{-1.51}{\percent} & \qty{-0.48}{\percent} \\
         \bottomrule
     \end{tabular}
 \end{table}

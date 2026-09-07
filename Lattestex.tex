@@ -4,7 +4,7 @@
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
-% version: 2026-09-02T2012Z                                                    %
+% version: 2026-09-07T1642Z                                                    %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
@@ -51,7 +51,11 @@
 \IfFontExistsTF{Times New Roman}{
     \setmainfont{Times New Roman}
 }{
-    \setmainfont{TeX Gyre Termes}
+    \IfFontExistsTF{EB Garamond}{
+        \setmainfont{EB Garamond}
+    }{
+        \setmainfont{TeX Gyre Termes}
+    }
 }
 % Allow plain ASCII double quotes in normal text while forcing the desired
 % double-quote style independently of the document language variant.
@@ -60,9 +64,9 @@
 \usefonttheme{serif}
 %\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12} % normal
 %\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % bold
-%\setmonofont{DejaVu Sans Mono}
-%\setmonofont{monofur}
-\setmonofont{B612 Mono}
+\IfFontExistsTF{B612 Mono}
+    {\setmonofont[Scale=MatchLowercase]{B612 Mono}}
+    {\setmonofont[Scale=MatchLowercase]{Latin Modern Mono}}
 \usepackage{attachfile}
 \usepackage{bbding} % checklists
 \usepackage{lipsum}
@@ -123,12 +127,25 @@
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
-% eV units kerning
+% units
 \usepackage{xspace}
+\sisetup{
+    per-mode=symbol,
+    separate-uncertainty=true,
+    detect-all=true,
+    retain-explicit-plus=true,
+}
 \newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
+\newcommand{\keV}{\text{k\eV}\xspace}
 \newcommand{\MeV}{\text{M\eV}\xspace}
 \newcommand{\GeV}{\text{G\eV}\xspace}
 \newcommand{\TeV}{\text{T\kern-0.1ex \eV}\xspace}
+\DeclareSIUnit{\eV}{e\hspace{-0.15ex}V}
+\DeclareSIUnit{\keV}{ke\hspace{-0.15ex}V}
+\DeclareSIUnit{\MeV}{Me\hspace{-0.15ex}V}
+\DeclareSIUnit{\GeV}{Ge\hspace{-0.15ex}V}
+\DeclareSIUnit{\TeV}{T\hspace{-0.1ex}e\hspace{-0.15ex}V}
+\DeclareSIUnit{\clight}{\ensuremath{\mathit{c}}}
 
 % lengths
 \newcommand{\lenbacbdced}{1 cm}
