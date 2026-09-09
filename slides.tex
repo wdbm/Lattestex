@@ -1,63 +1,3 @@
-{
-\setbeamercolor{normal text}{fg=white255255255}
-\setbeamercolor{background canvas}{bg=blueBunreachtNahEireann000002073}
-\begin{frame}[plain]
-\usebeamercolor[fg]{normal text}
-% Main content area: left 2/3 text, right 1/3 big logo
-\begin{columns}[T,totalwidth=\textwidth]
-    % Left 2/3: title, authors, institute, date
-    \begin{column}{0.66\textwidth}
-        \vspace{2.5cm}
-        {\usebeamerfont{title}\titlePageTitleSpecification\par}
-        \vspace{0.6cm}
-        {\usebeamerfont{author}\authorsTitlePageSpecification\par}
-        \vspace{0.6cm}
-        {\usebeamerfont{institute}\instituteSpecification\par}
-        \vspace{0.1cm}
-        {\usebeamerfont{date}\dateSpecification\par}
-    \end{column}
-    % Right 1/3: single top logo only
-    \begin{column}{0.34\textwidth}
-        \centering
-        \vspace{0.8cm}
-        \includegraphics[width=\titlePageLogoWidth]{\titleLogoAFilename}
-    \end{column}
-\end{columns}
-%\vspace*{\fill}
-\vspace*{0.8cm}
-%\noindent\makebox[\linewidth]{\rule{\paperwidth}{.4pt}}
-\color{blueArasAnUachtarain014095165}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{.4pt}}}
-% Bottom strip: logos spaced across full width
-\vspace*{-0.3cm}
-\begin{columns}[c,totalwidth=\textwidth]
-    \begin{column}{0.25\textwidth}
-        \centering
-        \raisebox{-0.25\height}{%
-            \includegraphics[width=0.5\linewidth]{\titleLogoBFilename}%
-        }
-    \end{column}
-    \begin{column}{0.25\textwidth}
-        \centering
-        \raisebox{-0.25\height}{%
-            \includegraphics[width=0.5\linewidth]{\titleLogoCFilename}%
-        }
-    \end{column}
-    \begin{column}{0.25\textwidth}
-        \centering
-        \raisebox{-0.25\height}{%
-            \includegraphics[width=0.5\linewidth]{\titleLogoDFilename}%
-        }
-    \end{column}
-    \begin{column}{0.25\textwidth}
-        \centering
-        \raisebox{-0.25\height}{%
-            \includegraphics[width=0.5\linewidth]{\titleLogoEFilename}%
-        }
-    \end{column}
-\end{columns}
-\end{frame}
-}
-
 \begin{frame}
 \frametitle{A single, large image}
 \vspace{-0.24 cm}
@@ -294,7 +234,10 @@ if __name__ == '__main__':
 \frametitle{Code: Python (syntax highlighting by minted)}
 Python code inline is like this:~\mintinline{python}{print("hello")}\\\\
 Python as a code block is like this:\\
-\begin{minted}[style=default, breaklines]{python}
+\begin{minted}[
+    style=default,
+    breaklines
+]{python}
 import multiprocessing
 
 def function(x):
@@ -313,7 +256,11 @@ if __name__ == '__main__':
 Python code inline is like this:~\mintinline{python}{print("hello")}\\\\
 Python as a code block is like this:\\
 \color{white255255255}
-\begin{minted}[style=github-dark, bgcolor=blueBunreachtNahEireann000002073, breaklines]{python}
+\begin{minted}[
+    style=github-dark,
+    bgcolor=black000000000,
+    breaklines
+]{python}
 import multiprocessing
 
 def function(x):
@@ -329,7 +276,11 @@ if __name__ == '__main__':
 
 \begin{frame}[fragile]
 \frametitle{Code: Python with smaller font (syntax highlighting by minted)}
-\begin{minted}[style=default, breaklines, fontsize=\tiny]{python}
+\begin{minted}[
+    style=default,
+    breaklines,
+    fontsize=\tiny
+]{python}
 import sys
 import time
  
@@ -388,7 +339,10 @@ void say_hello(){
 
 \begin{frame}[fragile]
 \frametitle{Code: C++ (syntax highlighting by minted)}
-\begin{minted}[style=default, breaklines]{cpp}
+\begin{minted}[
+    style=default,
+    breaklines
+]{cpp}
 #include <iostream>
 #include <thread>
 
@@ -411,7 +365,11 @@ void say_hello(){
 \begin{frame}[fragile]
 \frametitle{Code: C++ (syntax highlighting by minted)}
 \color{white255255255}
-\begin{minted}[style=github-dark, bgcolor=blueBunreachtNahEireann000002073, breaklines]{cpp}
+\begin{minted}[
+    style=github-dark,
+    bgcolor=black000000000,
+    breaklines
+]{cpp}
 #include <iostream>
 #include <thread>
 
@@ -446,7 +404,10 @@ In recent investigations with the photographic method, it has been shown that sl
 
 \begin{frame}[fragile]
 \frametitle{Code: \LaTeX~(syntax highlighting by minted)}
-\begin{minted}[style=default, breaklines]{latex}
+\begin{minted}[
+    style=default,
+    breaklines
+]{latex}
 \documentclass{article}
 \title{Processes involving charged mesons}
 \author{C.~M.~G.~Lattes, H.~Muirhead, G.~P.~S.~Occhialini, C.~F.~Powell}
@@ -461,7 +422,11 @@ In recent investigations with the photographic method, it has been shown that sl
 \frametitle{Code: \LaTeX~(dark syntax highlighting by minted)}
 {
 \color{white255255255}
-\begin{minted}[style=github-dark, bgcolor=blueBunreachtNahEireann000002073, breaklines]{latex}
+\begin{minted}[
+    style=github-dark,
+    bgcolor=black000000000,
+    breaklines
+]{latex}
 \documentclass{article}
 \title{Processes involving charged mesons}
 \author{C.~M.~G.~Lattes, H.~Muirhead, G.~P.~S.~Occhialini, C.~F.~Powell}
@@ -471,6 +436,114 @@ In recent investigations with the photographic method, it has been shown that sl
 \end{document}
 \end{minted}
 }
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Terminal output}
+\begin{minted}[
+    formatcom=\color{white255255255},
+    bgcolor=black000000000,
+    breaklines,
+    fontsize=\fontsize{5}{6}\selectfont
+]{text}
+total 136
+drwxrwxr-x 15 user user  4096 Sep  8 17:12 .
+drwxrwxr-x  3 user user  4096 Sep  8 17:36 ..
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 analyses
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 anytree
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 bin
+drwxrwxr-x  5 user user  4096 Sep  8 17:12 CI
+-rw-rw-r--  1 user user  2445 Sep  8 17:12 CMakeLists.txt
+drwxrwxr-x  7 user user  4096 Sep  8 17:12 configs
+-rw-rw-r--  1 user user  1552 Sep  8 17:12 CONTRIBUTING.md
+drwxrwxr-x 12 user user  4096 Sep  8 17:12 docs
+-rwxrwxr-x  1 user user  3764 Sep  8 17:12 getSharedFiles_boosted.sh
+-rwxrwxr-x  1 user user  6767 Sep  8 17:12 getSharedFiles.sh
+drwxrwxr-x  8 user user  4096 Sep  8 17:12 .git
+-rw-rw-r--  1 user user   125 Sep  8 17:12 .gitignore
+drwxrwxr-x  3 user user  4096 Sep  8 17:12 .gitlab
+-rw-rw-r--  1 user user 20268 Sep  8 17:12 .gitlab-ci.yml
+-rw-rw-r--  1 user user    85 Sep  8 17:12 .gitmodules
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 HHARD
+-rw-rw-r--  1 user user  1069 Sep  8 17:12 LICENSE
+-rw-rw-r--  1 user user  2260 Sep  8 17:12 mkdocs.yml
+-rw-rw-r--  1 user user    63 Sep  8 17:12 .pep8
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 plotting
+drwxrwxr-x  7 user user  4096 Sep  8 17:12 python
+-rw-rw-r--  1 user user  5621 Sep  8 17:12 README.md
+-rw-rw-r--  1 user user   140 Sep  8 17:12 requirements
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 Root
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 scripts
+-rw-rw-r--  1 user user   752 Sep  8 17:12 setup.sh
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Terminal output}
+Here is some terminal output:
+\begin{minted}[
+    formatcom=\color{white255255255},
+    bgcolor=black000000000,
+    breaklines,
+    fontsize=\fontsize{5}{6}\selectfont
+]{text}
+drwxrwxr-x 15 user user  4096 Sep  8 17:12 .
+drwxrwxr-x  3 user user  4096 Sep  8 17:36 ..
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 analyses
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 anytree
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 bin
+drwxrwxr-x  5 user user  4096 Sep  8 17:12 CI
+-rw-rw-r--  1 user user  2445 Sep  8 17:12 CMakeLists.txt
+drwxrwxr-x  7 user user  4096 Sep  8 17:12 configs
+-rwxrwxr-x  1 user user  3764 Sep  8 17:12 getSharedFiles_boosted.sh
+-rwxrwxr-x  1 user user  6767 Sep  8 17:12 getSharedFiles.sh
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 HHARD
+-rw-rw-r--  1 user user  1069 Sep  8 17:12 LICENSE
+-rw-rw-r--  1 user user  2260 Sep  8 17:12 mkdocs.yml
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 plotting
+drwxrwxr-x  7 user user  4096 Sep  8 17:12 python
+-rw-rw-r--  1 user user   140 Sep  8 17:12 requirements
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 Root
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 scripts
+-rw-rw-r--  1 user user   752 Sep  8 17:12 setup.sh
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Terminal output in column}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.32\textwidth}
+Here is some terminal output:
+\end{column}
+\begin{column}{0.64\textwidth}
+\begin{minted}[
+    formatcom=\color{white255255255},
+    bgcolor=black000000000,
+    breaklines,
+    fontsize=\fontsize{5}{6}\selectfont
+]{text}
+drwxrwxr-x 15 user user  4096 Sep  8 17:12 .
+drwxrwxr-x  3 user user  4096 Sep  8 17:36 ..
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 analyses
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 anytree
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 bin
+drwxrwxr-x  5 user user  4096 Sep  8 17:12 CI
+-rw-rw-r--  1 user user  2445 Sep  8 17:12 CMakeLists.txt
+drwxrwxr-x  7 user user  4096 Sep  8 17:12 configs
+-rwxrwxr-x  1 user user  3764 Sep  8 17:12 getSharedFiles_boosted.sh
+-rwxrwxr-x  1 user user  6767 Sep  8 17:12 getSharedFiles.sh
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 HHARD
+-rw-rw-r--  1 user user  1069 Sep  8 17:12 LICENSE
+-rw-rw-r--  1 user user  2260 Sep  8 17:12 mkdocs.yml
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 plotting
+drwxrwxr-x  7 user user  4096 Sep  8 17:12 python
+-rw-rw-r--  1 user user   140 Sep  8 17:12 requirements
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 Root
+drwxrwxr-x  2 user user  4096 Sep  8 17:12 scripts
+-rw-rw-r--  1 user user   752 Sep  8 17:12 setup.sh
+\end{minted}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}
