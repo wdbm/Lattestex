@@ -4,7 +4,7 @@
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
-% version: 2026-09-09T1553Z                                                    %
+% version: 2026-09-17T0145Z                                                    %
 %                                                                              %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                              %
@@ -265,6 +265,17 @@
 \setbeamercolor{itemize subsubitem}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
 % enumerated list marker colours
 \setbeamercolor{item projected}{fg=blueBunreachtNahEireann000002073, bg=white255255255}
+
+% two-column list entry
+% usage: \twocolumnitem[<left width>][<separation>]{<left>}{<right>}
+% The right column occupies the remaining line width.
+\NewDocumentCommand{\twocolumnitem}
+    {O{0.52\linewidth} O{0.06\linewidth} m m}{%
+    \item
+    \parbox[t]{#1}{\raggedright #3}%
+    \hspace{#2}%
+    \parbox[t]{\dimexpr\linewidth-#1-#2\relax}{\raggedright #4}%
+}
 
 % block colours and appearance
 \setbeamercolor{block title}{fg=white255255255, bg=blueArasAnUachtarain014095165}
